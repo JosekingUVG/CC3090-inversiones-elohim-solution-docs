@@ -1,0 +1,44 @@
+---
+sidebar_position: 4
+title: Configurar correo de recuperación
+---
+
+# Configurar el correo de recuperación
+
+Esta integración permite enviar códigos OTP y enlaces para restablecer la contraseña de los usuarios. DM Hub utiliza SMTP y admite configuraciones de Gmail y Outlook/Hotmail.
+
+## 1. Preparar la cuenta de correo
+
+1. Usa una cuenta exclusiva para los mensajes de la tienda.
+2. Activa la verificación en dos pasos.
+3. Genera una **contraseña de aplicación** desde la configuración de seguridad del proveedor.
+4. Guarda esa contraseña; no uses la contraseña personal de la cuenta.
+
+:::warning Usa una contraseña de aplicación
+La contraseña de aplicación sustituye la contraseña normal al conectar DM Hub por SMTP. Si el proveedor no permite crearla, revisa primero que la verificación en dos pasos esté activa.
+:::
+
+## 2. Guardar la configuración en DM Hub
+
+1. Inicia sesión como administrador.
+2. Abre **Configuración del Sistema**.
+3. Selecciona la sección **Correo** o **SMTP**.
+4. Introduce el correo emisor.
+5. Introduce la contraseña de aplicación.
+6. Guarda la configuración.
+
+El sistema identifica automáticamente la configuración SMTP para Gmail y Outlook/Hotmail a partir del dominio del correo.
+
+## 3. Validar la recuperación
+
+1. Cierra sesión o abre una ventana privada del navegador.
+2. Selecciona **¿Olvidaste tu contraseña?**.
+3. Introduce el correo de una cuenta existente.
+4. Confirma que llegue el código OTP.
+5. Define una nueva contraseña e inicia sesión con ella.
+
+## Problemas frecuentes
+
+- **No llega el correo:** revisa spam, confirma que el remitente esté escrito correctamente y verifica que la contraseña de aplicación siga activa.
+- **Credenciales rechazadas:** genera una nueva contraseña de aplicación y vuelve a guardarla en DM Hub.
+- **El código expiró:** solicita un código nuevo y utiliza el más reciente.

@@ -9,7 +9,7 @@ Respuestas a las preguntas más comunes sobre DM hub.
 ## Preguntas Generales
 
 ### ¿Cómo creo una cuenta?
-[Ver: Primeros Pasos](../getting-started/primeros-pasos.md)
+[Ver: Primeros Pasos](./getting-started/primeros-pasos.md)
 
 ### ¿Es gratis usar DM Hub?
 Debido a que esta en su fase de desarrollo no se ha terminado de definir el precio del software, sin embargo, si se tiene pensando cobrar la utilizacion de este software en las etapas finales del mismo. 

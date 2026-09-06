@@ -2,22 +2,47 @@
 sidebar_position: 1
 ---
 
-# Bienvenido a DM Hub Docs
+# Guía de configuración de DM Hub
 
-¡Hola! Esta es la documentación oficial de **DM Hub (Distributors Marketplace Hub)**. Aquí encontrarás guías operativas sobre cómo configurar y utilizar las capacidades de la plataforma.
+Esta es la documentación oficial de **DM Hub (Distributors Marketplace Hub)**. Aquí encontrarás los pasos para preparar una tienda, configurar sus integraciones y operar la plataforma.
 
-## Características Clave
+## Primeros pasos
 
-* **Constructor Visual:** Diseña tu tienda storefront personalizada sin código.
-* **Control de Inventarios:** Administra el stock físico de tus productos por sucursal.
-* **Flujo Kanban:** Gestiona reservaciones, valida pagos y realiza despachos en tiempo real.
-* **Integraciones:** Conecta Stripe para pasarelas de pago, Cloudinary para imágenes y SMTP para correos automáticos.
+Completa estas configuraciones en el siguiente orden:
 
-## Roles Definidos
+1. **Cloudinary:** habilita la carga de imágenes de productos y del logo de la tienda.
+2. **Stripe:** habilita los cobros con tarjeta y la actualización automática del estado de los pagos.
+3. **Correo de recuperación:** permite enviar códigos para restablecer contraseñas.
 
-* **Administrador / Super Admin:** Control completo de configuraciones, tiendas, sucursales e integraciones.
-* **Cajero:** Operación diaria de pedidos, cobros y despachos en el tablero Kanban.
-* **Cliente:** Navegación pública, carrito de compras y creación de reservaciones.
+Para empezar, inicia sesión como administrador y abre **Configuración del Sistema** en el portal administrativo. Guarda cada integración antes de pasar a la siguiente y realiza una prueba después de configurarla.
+
+## Antes de comenzar
+
+- Ten acceso de administrador al portal de DM Hub.
+- Usa una cuenta independiente para cada servicio cuando sea posible.
+- Mantén las claves secretas fuera del código fuente, capturas de pantalla y repositorios públicos.
+- En producción, utiliza credenciales de producción únicamente después de validar el flujo con credenciales de prueba.
+
+## Características principales
+
+- **Constructor visual:** Diseña tu storefront personalizada sin código.
+- **Control de inventario:** Administra el stock físico de tus productos por sucursal.
+- **Flujo Kanban:** Gestiona reservaciones, valida pagos y realiza despachos en tiempo real.
+- **Integraciones:** Conecta Stripe, Cloudinary y el servicio SMTP de correo.
+
+## Roles
+
+- **Administrador / Super Admin:** Control de configuraciones, tiendas, sucursales e integraciones.
+- **Cajero:** Operación diaria de pedidos, cobros y despachos en el tablero Kanban.
+- **Cliente:** Navegación pública, carrito de compras y creación de reservaciones.
+
+## Comprobación rápida
+
+Cuando termines, verifica lo siguiente:
+
+- Carga una imagen desde el formulario de productos y confirma que se muestre correctamente.
+- Crea una reservación de prueba con Stripe en modo test y confirma que cambie a pagada.
+- Solicita la recuperación de una cuenta y confirma que llegue el código al correo indicado.
 
 ---
 

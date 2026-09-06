@@ -1,0 +1,51 @@
+---
+sidebar_position: 3
+title: Configurar Stripe
+---
+
+# Configurar Stripe
+
+Stripe procesa los pagos con tarjeta durante el checkout de una reservación. Para la primera prueba utiliza las claves del modo **Test**.
+
+## 1. Obtener las claves
+
+1. Entra al [Dashboard de Stripe](https://dashboard.stripe.com/) y selecciona el modo **Test**.
+2. Abre **Developers > API keys**.
+3. Copia la **Publishable key**, que comienza con `pk_test_`.
+4. Genera o copia la **Secret key**, que comienza con `sk_test_`.
+
+## 2. Guardar las claves en DM Hub
+
+1. Inicia sesión como administrador.
+2. Abre **Configuración del Sistema**.
+3. Selecciona la sección **Stripe**.
+4. Pega la clave pública y la clave secreta.
+5. Guarda la configuración.
+
+## 3. Configurar el webhook
+
+En Stripe, crea un endpoint para:
+
+```text
+https://<dominio-de-tu-api>/api/pagos/webhook
+```
+
+Selecciona los eventos de pago que utilice el backend y guarda el **signing secret** del webhook en la configuración segura del entorno correspondiente.
+
+:::danger Nunca publiques la Secret key
+La clave secreta y el signing secret del webhook solo deben estar en el backend o en el administrador de secretos. Si se filtran, revócalos inmediatamente desde Stripe.
+:::
+
+## 4. Validar la integración
+
+1. Mantén Stripe en modo **Test**.
+2. Crea una reservación desde el storefront.
+3. Completa el pago con una tarjeta de prueba de Stripe.
+4. Confirma en Stripe que el pago fue recibido.
+5. Confirma en DM Hub que la reservación cambió al estado **pagado**.
+
+## Problemas frecuentes
+
+- **La tarjeta es rechazada:** confirma que estás usando una tarjeta de prueba en modo Test.
+- **El pago existe en Stripe, pero la reservación no cambia:** revisa la URL del webhook y sus eventos.
+- **El frontend no inicia el pago:** confirma que la clave pública corresponda al mismo modo que la clave secreta.
