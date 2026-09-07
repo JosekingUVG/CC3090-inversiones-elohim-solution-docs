@@ -1,0 +1,39 @@
+---
+sidebar_position: 2
+title: Configurar Cloudinary
+---
+
+# Configurar Cloudinary
+
+Cloudinary almacena las imágenes de productos y el logo de la tienda. Necesitas tres datos: **Cloud Name**, **API Key** y **API Secret**.
+
+## 1. Crear o abrir la cuenta
+
+1. Entra a [Cloudinary](https://cloudinary.com/) y crea una cuenta o inicia sesión.
+2. Desde el **Dashboard**, identifica los valores **Cloud name**, **API Key** y **API Secret**.
+3. Copia el secreto únicamente en un lugar seguro. No lo publiques ni lo compartas en capturas.
+
+## 2. Guardar las credenciales en DM Hub
+
+1. Inicia sesión como administrador.
+2. Abre **Configuración del Sistema**.
+3. Selecciona la sección **Cloudinary**.
+4. Pega el **Cloud Name**, **API Key** y **API Secret** en sus campos correspondientes.
+5. Guarda la configuración.
+
+## 3. Validar la integración
+
+1. Abre el módulo de productos.
+2. Crea o edita un producto.
+3. Sube una imagen y guarda el producto.
+4. Confirma que la imagen se visualice después de recargar la página.
+
+:::warning No compartas el API Secret
+El **API Secret** permite firmar operaciones contra Cloudinary. Si se expone, regénéralo desde Cloudinary y actualiza la configuración de DM Hub.
+:::
+
+## Problemas frecuentes
+
+- **La imagen no sube:** confirma que los tres campos estén completos y que no tengan espacios al inicio o al final.
+- **La imagen sube, pero no se muestra:** recarga la página y comprueba que la URL generada use `https`.
+- **La clave dejó de funcionar:** revisa si el API Secret fue regenerado en Cloudinary.
